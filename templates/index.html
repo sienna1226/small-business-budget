@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Small Business Budget Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Small Business Budget Planner</h1>
+    <form action="/result" method="post">
+        <h3>Business Info</h3>
+        <label>Business Name: <input type="text" name="business_name" required></label><br>
+        <label>Industry: <input type="text" name="industry" required></label><br>
+        <label>Start Month: <input type="text" name="start_month" required></label><br>
+
+        <h3>Revenue</h3>
+        <label>Monthly Sales: <input type="number" name="monthly_sales" step="0.01" required></label><br>
+        <label>Other Income: <input type="number" name="other_income" step="0.01" required></label><br>
+
+        <h3>Fixed Costs</h3>
+        <label>Rent: <input type="number" name="rent" step="0.01" required></label><br>
+        <label>Salaries: <input type="number" name="salaries" step="0.01" required></label><br>
+        <label>Insurance: <input type="number" name="insurance" step="0.01" required></label><br>
+        <label>Utilities: <input type="number" name="utilities" step="0.01" required></label><br>
+        <label>Depreciation (optional): <input type="number" name="depreciation" step="0.01"></label><br>
+        <label>Other Fixed Costs: <input type="number" name="other_fixed_costs" step="0.01" required></label><br>
+
+        <h3>Variable Costs</h3>
+        <label>Materials Cost: <input type="number" name="materials_cost" step="0.01" required></label><br>
+        <label>Marketing Cost: <input type="number" name="marketing_cost" step="0.01" required></label><br>
+        <label>Shipping Cost: <input type="number" name="shipping_cost" step="0.01" required></label><br>
+        <label>Other Variable Costs: <input type="number" name="other_variable_costs" step="0.01" required></label><br>
+
+        <h3>Tax</h3>
+        <label>Tax Rate (%): <input type="number" name="tax_rate" step="0.01" required></label><br><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html>

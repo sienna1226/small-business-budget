@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Budget Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="{{ 'high-margin' if profit_margin|float >= 50 else 'low-margin' }}">
+    <body class="{{ 'high-margin' if profit_margin|float >= 50 else 'low-margin' }}">
+        <div class="result-container">
+            <h1>Budget Results for {{ business_name }}</h1>
+    
+            <div class="section">
+                <p><strong>Industry:</strong> {{ industry }}</p>
+                <p><strong>Start Month:</strong> {{ start_month }}</p>
+            </div>
+    
+            <div class="section">
+                <h3>📊 Financial Summary</h3>
+                <p><strong>Total Costs:</strong> ${{ '{:,.2f}'.format(total_costs) }}</p>
+                <p><strong>Net Profit:</strong> ${{ '{:,.2f}'.format(net_profit) }}</p>
+                <p><strong>Break-Even Sales:</strong> ${{ '{:,.2f}'.format(break_even_sales) }}</p>
+                <p><strong>Profit Margin:</strong> {{ '{:.2f}'.format(profit_margin) }}%</p>
+            </div>
+    
+            <br>
+            <a href="/">← Back to Input</a>
+        </div>
+    </body>    
+</body>
+</html>
